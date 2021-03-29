@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as ReachRouterLink } from "react-router-dom"
 
-import {Container, Logo, Icon, Navbar} from "./styles/header"
+import {Container, Logo, Icon, Navbar, Frame, List, Link} from "./styles/header"
 
 export default function Header({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -25,4 +25,20 @@ Header.Icon = function HeaderIcon({ to, ...restProps }) {
 
 Header.Navbar = function HeaderNavbar({ children, ...restProps }) {
     return <Navbar {...restProps}>{children}</Navbar>
+}
+
+Header.Frame = function HeaderFrame({ children, ...restProps }) {
+    return <Frame {...restProps}>{children}</Frame>
+}
+
+Header.List = function HeaderList({ children, ...restProps }) {
+    return <List {...restProps}>{children}</List>
+}
+
+Header.Link = function HeaderLink({ to, ...restProps}) {
+    return (
+        <ReachRouterLink to={to}>
+            <Link {...restProps} />
+        </ReachRouterLink>
+    )
 }
