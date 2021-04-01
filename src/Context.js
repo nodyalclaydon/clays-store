@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 
+
 const Context = React.createContext()
 
 function ContextProvider({children}) {
@@ -8,24 +9,32 @@ function ContextProvider({children}) {
     const [pianoPhotos, setPianoPhotos] = useState([])
     const [cartItems, setCartItems] = useState([])
 
-    const accessKey = "bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
+    const guitarUrl = "https://api.unsplash.com/search/photos?page=1&query=guitar&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
+    const recordUrl = "https://api.unsplash.com/search/photos?Xpage=1&query=record&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
+    const pianoUrl = "https://api.unsplash.com/search/photos?page=1&query=piano&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
 
-    const guitarUrl = `https://api.unsplash.com/search/photos?client_id=${accessKey}page=1&query=guitar`
-    const recordUrl = `https://api.unsplash.com/search/photos?client_id=${accessKey}page=1&query=record`
-    const pianoUrl = `https://api.unsplash.com/search/photos?client_id=${accessKey}page=1&query=piano`
-
-    useEffect(() => {
+    function getGPhotos() {
         fetch(guitarUrl)
             .then(res => res.json())
-            .then(gData => setGuitarPhotos(gData))
-        
+            .then(data => setGuitarPhotos(data.results))
+    }
+
+    function getRPhotos() {
         fetch(recordUrl)
             .then(res => res.json())
-            .then(rData => setRecordPhotos(rData))
+            .then(data => setRecordPhotos(data))
+    }
 
+    function getPPhotos() {
         fetch(pianoUrl)
             .then(res => res.json())
-            .then(pData => setPianoPhotos(pData))
+            .then(data => setPianoPhotos(data))
+    }
+
+    useEffect(() => {
+        getGPhotos()
+        getRPhotos()
+        getPPhotos()
     }, [])
 
     function addToCart(newItem) {
