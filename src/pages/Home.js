@@ -1,8 +1,10 @@
 import React from "react"
 
+import { CategoryPrev } from "../containers/CategoryPrev"
+
 function Home() {
     return (
-        <h1>This will be the home page</h1>
+        <CategoryPrev />
     )
 }
 

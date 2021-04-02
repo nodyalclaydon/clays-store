@@ -16,4 +16,15 @@ export const Photo = styled.img`
     height: 250px;
     object-fit: cover;
     margin: 5px;
+    transition: transform 100ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.025);
+        cursor: pointer;
+    }
+`
+
+export const Headline = styled.h2`
+    font-size: 1.6rem;
+    text-align: center;
 `

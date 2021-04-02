@@ -4,9 +4,7 @@ export const Container = styled.footer`
     display: flex;
     flex-direction: row;
     background-color: #222;
-    position: absolute;
-    margin: 0;
-    bottom: 0;
+    margin-top: 200px;
     width: 100%;
     height: 100px;
 `

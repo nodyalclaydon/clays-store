@@ -1,7 +1,11 @@
-import React from "react"
+import React, {useContext} from "react"
 import { Header } from "../components"
 
+import {Context} from "../Context"
+
 export function HeaderContainer() {
+    const {setCategory} = useContext(Context)
+
     return (
         <Header>
             <Header.Frame>
@@ -10,9 +14,9 @@ export function HeaderContainer() {
             </Header.Frame>
             <Header.Navbar>
                 <Header.List><Header.Link to="/">home</Header.Link></Header.List>
-                <Header.List><Header.Link to="/category">guitars</Header.Link></Header.List>
-                <Header.List><Header.Link to="/category">records</Header.Link></Header.List>
-                <Header.List><Header.Link to="/category">pianos</Header.Link></Header.List>
+                <Header.List><Header.Link to="/category" onClick={() => {setCategory("guitar")}}>guitars</Header.Link></Header.List>
+                <Header.List><Header.Link to="/category" onClick={() => {setCategory("records")}}>records</Header.Link></Header.List>
+                <Header.List><Header.Link to="/category" onClick={() => {setCategory("pianos")}}>pianos</Header.Link></Header.List>
             </Header.Navbar>
         </Header>
     )
