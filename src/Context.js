@@ -9,6 +9,7 @@ function ContextProvider({children}) {
     const [pianoPhotos, setPianoPhotos] = useState([])
     const [category, setCategory] = useState("")
     const [cartItems, setCartItems] = useState([])
+    const [overlay, setOverlay] = useState([])
 
     const guitarUrl = "https://api.unsplash.com/search/photos?per_page=30&query=guitar&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
     const recordUrl = "https://api.unsplash.com/search/photos?per_page=30&query=vinyl_record&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
@@ -56,6 +57,22 @@ function ContextProvider({children}) {
         setCartItems([])
     }
 
+    //category page: add onClick to each rendered image that displays image overlay component
+
+    function displayOverlay(img) {
+        //set state for overlay array to img array
+        setOverlay(img)
+        console.log(overlay)
+        //in overlay container, display overlay using info from state (passed here)
+    }
+
+    function hideOverlay() {
+        //set state for overlay to empty array
+        setOverlay([])
+        console.log(overlay)
+        //overlay container will set display to none if state is empty
+    }
+
     return (
         <Context.Provider value={{
             guitarPhotos,
@@ -66,7 +83,10 @@ function ContextProvider({children}) {
             cartItems,
             addToCart,
             removeFromCart,
-            emptyCart
+            emptyCart,
+            overlay,
+            displayOverlay,
+            hideOverlay
         }}>
             {children}
         </Context.Provider>
