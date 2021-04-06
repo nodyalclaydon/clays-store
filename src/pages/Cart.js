@@ -1,8 +1,10 @@
 import React from "react"
 
+import {CartItemContainer} from "../containers/CartItem"
+
 function Cart() {
     return (
-            <h1>This will be the cart</h1>
+            <CartItemContainer />
     )
 }
 

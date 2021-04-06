@@ -46,11 +46,12 @@ function ContextProvider({children}) {
     }, [])
 
     function addToCart(newItem) {
-
+        setCartItems(prevCartItems => [...prevCartItems, newItem])
+        console.log(newItem)
     }
 
     function removeFromCart(id) {
-
+        setCartItems(prevCartItems => prevCartItems.filter(item => item.id !== id)) //revisit
     }
 
     function emptyCart() {
@@ -62,14 +63,12 @@ function ContextProvider({children}) {
     function displayOverlay(img) {
         //set state for overlay array to img array
         setOverlay(img)
-        console.log(overlay)
         //in overlay container, display overlay using info from state (passed here)
     }
 
     function hideOverlay() {
         //set state for overlay to empty array
         setOverlay([])
-        console.log(overlay)
         //overlay container will set display to none if state is empty
     }
 

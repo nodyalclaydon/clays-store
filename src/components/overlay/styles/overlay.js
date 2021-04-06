@@ -1,6 +1,3 @@
-//background div, container, image element, another container w/ following: (display flex column)
-//h1 for title, h3 for artist credit, p tag for price, add to cart button, view cart button, close element
-
 import styled from "styled-components"
 
 export const Background = styled.div`
@@ -33,6 +30,7 @@ export const Container = styled.div`
     height: 600px;
     background-color: white;
     box-shadow: 0 10px 6px -6px #777;
+    z-index: 1;
 `
 
 export const Image = styled.img`
@@ -97,4 +95,31 @@ export const Close = styled.button`
     position: absolute;
     top: 10px;
     right: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transform: rotate(45deg);
+    transition: transform 300ms ease-in-out;
+
+    &:before,
+    &:after {
+        content: " ";
+        position: absolute;
+        left: 8px;
+        top: 0;
+        height: 20px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    &:hover {
+        transform: rotate(135deg);
+    }
+
+    &:after {
+        transform: rotate(-90deg);
+    }
 `

@@ -1,6 +1,3 @@
-//background div, container, image element, another container w/ following: (display flex column)
-//h1 for title, h3 for artist credit, p tag for price, add to cart button, view cart button, close element
-
 import React from "react"
 import { 
     Background, 
@@ -11,7 +8,8 @@ import {
     Credits, 
     Price, 
     AddToCart, 
-    ViewCart } from "./styles/overlay"
+    ViewCart,
+    Close } from "./styles/overlay"
 
 export default function Overlay({ children, ...restProps }) {
     return <Background {...restProps}>{children}</Background>
@@ -47,4 +45,8 @@ Overlay.AddToCart = function OverlayAddToCart({ ...restProps }) {
 
 Overlay.ViewCart = function OverlayViewCart({ ...restProps }) {
     return <ViewCart {...restProps}></ViewCart>
+}
+
+Overlay.Close = function OverlayClose({ ...restProps }) {
+    return <Close {...restProps}></Close>
 }
