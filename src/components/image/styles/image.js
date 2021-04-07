@@ -5,6 +5,8 @@ export const Container = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 2000px;
+    margin: 0 auto;
 `
 
 export const CartIcon = styled.img`

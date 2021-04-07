@@ -102,7 +102,7 @@ export const Close = styled.button`
     border: none;
     background-color: transparent;
     transform: rotate(45deg);
-    transition: transform 300ms ease-in-out;
+    transition: transform 100ms ease-in-out;
 
     &:before,
     &:after {
