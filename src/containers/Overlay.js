@@ -5,7 +5,7 @@ import {Context} from "../Context"
 
 export function OverlayContainer({ children, ...restProps }) {
     const {overlay, hideOverlay, addToCart} = useContext(Context)
-    
+
 return overlay.length === 0 ? <div></div> :
         <Overlay>
             <Overlay.Container>
@@ -15,7 +15,7 @@ return overlay.length === 0 ? <div></div> :
                     <Overlay.Credits>credit: {overlay.user.name}</Overlay.Credits>
                     <Overlay.Price>$9.89</Overlay.Price>
                     <Overlay.AddToCart onClick={() => addToCart(overlay)}>add to cart</Overlay.AddToCart>
-                    <Overlay.ViewCart>view cart</Overlay.ViewCart>
+                    <Overlay.ViewCart to="/cart" onClick={() => hideOverlay()}>view cart</Overlay.ViewCart>
                     <Overlay.Close onClick={() => hideOverlay()} />
                 </Overlay.Info>
             </Overlay.Container>

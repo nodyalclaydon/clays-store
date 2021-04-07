@@ -24,11 +24,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-radius: 10px;
     width: 70%;
     max-width: 800px;
     position: fixed;
-    height: 600px;
     background-color: white;
+    height: 600px;
     box-shadow: 0 10px 6px -6px #777;
     z-index: 1;
 `
@@ -38,6 +39,7 @@ export const Image = styled.img`
     height: 85%;
     object-fit: cover;
     margin: auto 0 auto 20px;
+    border: 20px white solid;
 `
 
 export const Info = styled.div`
@@ -65,8 +67,9 @@ export const Price = styled.p`
 `
 
 export const AddToCart = styled.button`
-    background-color: green;
+    background-color: #3d5a80;
     border: none;
+    outline: none;
     width: 150px;
     color: white;
     font-weight: 700;
@@ -75,11 +78,17 @@ export const AddToCart = styled.button`
     padding: 10px 10px;
     border-radius: 3px;
     cursor: pointer;
+    transition: transform 150ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.045)
+    }
 `
 
 export const ViewCart = styled.button`
-    background-color: red;
+    background-color: #ee6c4d;
     border: none;
+    outline: none;
     width: 150px;
     color: white;
     font-weight: 700;
@@ -89,6 +98,11 @@ export const ViewCart = styled.button`
     border-radius: 3px;
     margin: 15px 0 50px;
     cursor: pointer;
+    transition: transform 150ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.045)
+    }
 `
 
 export const Close = styled.button`
@@ -112,11 +126,12 @@ export const Close = styled.button`
         top: 0;
         height: 20px;
         width: 2px;
-        background-color: #333;
+        background-color: #293241;
     }
 
     &:hover {
         transform: rotate(135deg);
+        &:before, &:after { background-color: #ee6c4d; }
     }
 
     &:after {

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link as ReachRouterLink } from "react-router-dom"
 import { 
     Background, 
     Container, 
@@ -43,8 +44,12 @@ Overlay.AddToCart = function OverlayAddToCart({ ...restProps }) {
     return <AddToCart {...restProps}></AddToCart>
 }
 
-Overlay.ViewCart = function OverlayViewCart({ ...restProps }) {
-    return <ViewCart {...restProps}></ViewCart>
+Overlay.ViewCart = function OverlayViewCart({ to, ...restProps }) {
+    return (
+        <ReachRouterLink to={to}>
+            <ViewCart {...restProps}></ViewCart>
+        </ReachRouterLink>
+    )
 }
 
 Overlay.Close = function OverlayClose({ ...restProps }) {

@@ -4,19 +4,34 @@ import { Preview } from "../components"
 import { Context } from "../Context"
 
 export function CategoryPrev({ children, ...restProps }) {
-    const {guitarPhotos, recordPhotos, pianoPhotos, setCategory} = useContext(Context)
+    const {guitarPhotos, recordPhotos, pianoPhotos, setCategory, displayOverlay} = useContext(Context)
 
     // create new photo array of first 4 for each category
     const guitarPrevElements = guitarPhotos.slice(0, 4).map(img => {
-        return <Preview.ImagePrev key={img.id} src={img.urls.regular} alt={img.alt_description} />
+        return <Preview.ImagePrev 
+                key={img.id} 
+                src={img.urls.regular} 
+                alt={img.alt_description} 
+                onClick={() => displayOverlay(img)}
+                />
     })
 
     const recordPrevElements = recordPhotos.slice(0, 4).map(img => {
-        return <Preview.ImagePrev key={img.id} src={img.urls.regular} alt={img.alt_description} />
+        return <Preview.ImagePrev 
+                key={img.id} 
+                src={img.urls.regular} 
+                alt={img.alt_description} 
+                onClick={() => displayOverlay(img)}
+                />
     })
 
     const pianoPrevElements = pianoPhotos.slice(0, 4).map(img => {
-        return <Preview.ImagePrev key={img.id} src={img.urls.regular} alt={img.alt_description} />
+        return <Preview.ImagePrev 
+                key={img.id} 
+                src={img.urls.regular} 
+                alt={img.alt_description} 
+                onClick={() => displayOverlay(img)}
+                />
     })
 
     return (

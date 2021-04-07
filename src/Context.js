@@ -47,7 +47,6 @@ function ContextProvider({children}) {
 
     function addToCart(newItem) {
         setCartItems(prevCartItems => [...prevCartItems, newItem])
-        console.log(newItem)
     }
 
     function removeFromCart(id) {
@@ -67,9 +66,7 @@ function ContextProvider({children}) {
     }
 
     function hideOverlay() {
-        //set state for overlay to empty array
         setOverlay([])
-        //overlay container will set display to none if state is empty
     }
 
     return (

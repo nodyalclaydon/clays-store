@@ -9,8 +9,8 @@ export const Container = styled.div`
 `
 
 export const ImagePrev = styled.img`
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     margin: 5px;
     transition: transform 100ms ease-in-out;
@@ -18,6 +18,11 @@ export const ImagePrev = styled.img`
     &:hover {
         transform: scale(1.025);
         cursor: pointer;
+    }
+
+    @media (min-width: 1000px) {
+        width: 240px;
+        height: 240px;
     }
 `
 
