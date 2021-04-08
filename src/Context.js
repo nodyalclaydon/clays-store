@@ -50,11 +50,7 @@ function ContextProvider({children}) {
     }
 
     function removeFromCart(id) {
-        setCartItems(prevCartItems => prevCartItems.filter(item => item.id !== id)) //revisit
-    }
-
-    function emptyCart() {
-        setCartItems([])
+        setCartItems(prevCartItems => prevCartItems.filter(item => item.id !== id)) 
     }
 
     //category page: add onClick to each rendered image that displays image overlay component
@@ -79,7 +75,6 @@ function ContextProvider({children}) {
             cartItems,
             addToCart,
             removeFromCart,
-            emptyCart,
             overlay,
             displayOverlay,
             hideOverlay
