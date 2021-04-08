@@ -39,7 +39,6 @@ export const Image = styled.img`
     height: 85%;
     object-fit: cover;
     margin: auto 0 auto 20px;
-    border: 20px white solid;
 `
 
 export const Info = styled.div`

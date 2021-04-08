@@ -39,9 +39,12 @@ export const Price = styled.h1`
     align-self: center;
     position: absolute;
     right: 30px;
+    font-weight: 400;
 `
 
 export const Total = styled.h1`
     position: absolute;
     right: 30px;
+    margin-top: 40px;
+    font-size: 2.4rem;
 `

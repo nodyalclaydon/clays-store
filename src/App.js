@@ -10,20 +10,22 @@ import Cart from "./pages/Cart"
 function App() {
   return (
     <>
-    <HeaderContainer />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+    <div className="site-content">
+      <HeaderContainer />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-      <Route path="/category">
-        <Category />
-      </Route>
+        <Route path="/category">
+          <Category />
+        </Route>
 
-      <Route path="/cart">
-        <Cart />
-      </Route>
-    </Switch>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+      </Switch>
+    </div>
     <FooterContainer />
     </>
   );

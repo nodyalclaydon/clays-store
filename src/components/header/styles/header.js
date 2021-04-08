@@ -44,6 +44,10 @@ export const Link = styled.a`
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-right: 30px;
+
+    &:hover {
+        color: #e0fbfc;
+    }
 `
 
 export const Counter = styled.p`

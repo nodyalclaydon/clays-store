@@ -7,4 +7,8 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 10px;
         margin: 0;
     }
+
+    .site-content {
+        min-height: 92vh;
+    }
 `
