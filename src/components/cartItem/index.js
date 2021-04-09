@@ -8,7 +8,8 @@ import {
     Credit,
     Price,
     Total,
-    Info
+    Info,
+    BuyBtn
 } from "./styles/cartItem"
 
 export default function CartItem({ children, ...restProps }) {
@@ -41,4 +42,8 @@ CartItem.Total = function CartItemTotal({ ...restProps }) {
 
 CartItem.Info = function CartItemInfo({ children, ...restProps }) {
     return <Info {...restProps}>{children}</Info>
+}
+
+CartItem.BuyBtn = function CartItemBuyBtn({ ...restProps }) {
+    return <BuyBtn {...restProps} />
 }

@@ -2,13 +2,29 @@ import styled from "styled-components"
 
 export const Container = styled.footer`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #293241;
     margin-top: 5px;
-    width: 100%;
+    padding: 20px;
     height: 100px;
 `
 
-export const Icon = styled.div`
+export const Icon = styled.img`
     filter: brightness(0) invert(1);
+    height: 100%;
+    cursor: pointer;
+`
+
+export const Link = styled.a`
+    height: 75%;
+    margin: 0 auto;
+`
+
+export const Text = styled.p`
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 15px auto 0;
 `

@@ -112,6 +112,7 @@ export const Close = styled.button`
     padding: 3px;
     cursor: pointer;
     border: none;
+    outline: none;
     background-color: transparent;
     transform: rotate(45deg);
     transition: transform 100ms ease-in-out;

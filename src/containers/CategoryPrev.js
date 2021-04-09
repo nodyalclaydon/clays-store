@@ -4,10 +4,10 @@ import { Preview } from "../components"
 import { Context } from "../Context"
 
 export function CategoryPrev({ children, ...restProps }) {
-    const {guitarPhotos, recordPhotos, pianoPhotos, setCategory, displayOverlay} = useContext(Context)
+    const {mountainPhotos, cityPhotos, wildlifePhotos, setCategory, displayOverlay} = useContext(Context)
 
     // create new photo array of first 4 for each category
-    const guitarPrevElements = guitarPhotos.slice(0, 4).map(img => {
+    const mountainPrevElements = mountainPhotos.slice(0, 4).map(img => {
         return <Preview.ImagePrev 
                 key={img.id} 
                 src={img.urls.regular} 
@@ -16,7 +16,7 @@ export function CategoryPrev({ children, ...restProps }) {
                 />
     })
 
-    const recordPrevElements = recordPhotos.slice(0, 4).map(img => {
+    const cityPrevElements = cityPhotos.slice(0, 4).map(img => {
         return <Preview.ImagePrev 
                 key={img.id} 
                 src={img.urls.regular} 
@@ -25,7 +25,7 @@ export function CategoryPrev({ children, ...restProps }) {
                 />
     })
 
-    const pianoPrevElements = pianoPhotos.slice(0, 4).map(img => {
+    const wildlifePrevElements = wildlifePhotos.slice(0, 4).map(img => {
         return <Preview.ImagePrev 
                 key={img.id} 
                 src={img.urls.regular} 
@@ -37,27 +37,27 @@ export function CategoryPrev({ children, ...restProps }) {
     return (
         <>
         <Preview>
-            <Preview.Header>Guitars</Preview.Header>
+            <Preview.Header>Mountains</Preview.Header>
             <Preview.PrevContainer>
-                {guitarPrevElements}
+                {mountainPrevElements}
             </Preview.PrevContainer>
-            <Preview.SeeMore><Preview.Link to="/category" onClick={() => {setCategory("guitar")}}>see more</Preview.Link></Preview.SeeMore>
+            <Preview.SeeMore><Preview.Link to="/category" onClick={() => {setCategory("mountains")}}>see more</Preview.Link></Preview.SeeMore>
         </Preview>
 
         <Preview>
-            <Preview.Header>Records</Preview.Header>
+            <Preview.Header>Cities</Preview.Header>
             <Preview.PrevContainer>
-                {recordPrevElements}
+                {cityPrevElements}
             </Preview.PrevContainer>
-            <Preview.SeeMore><Preview.Link to="/category" onClick={() => {setCategory("records")}}>see more</Preview.Link></Preview.SeeMore>
+            <Preview.SeeMore><Preview.Link to="/category" onClick={() => {setCategory("cities")}}>see more</Preview.Link></Preview.SeeMore>
         </Preview>
 
         <Preview>
-            <Preview.Header>Pianos</Preview.Header>
+            <Preview.Header>Wildlife</Preview.Header>
             <Preview.PrevContainer>
-                {pianoPrevElements}
+                {wildlifePrevElements}
             </Preview.PrevContainer>
-            <Preview.SeeMore><Preview.Link to="/category" onClick={() => {setCategory("pianos")}}>see more</Preview.Link></Preview.SeeMore>
+            <Preview.SeeMore><Preview.Link to="/category" onClick={() => {setCategory("wildlife")}}>see more</Preview.Link></Preview.SeeMore>
         </Preview>
         </>
     )

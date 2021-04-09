@@ -9,13 +9,9 @@ export const Container = styled.div`
     margin: 0 auto;
 `
 
-export const CartIcon = styled.img`
-
-`
-
 export const Photo = styled.img`
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     margin: 5px;
     transition: transform 100ms ease-in-out;
@@ -24,9 +20,18 @@ export const Photo = styled.img`
         transform: scale(1.025);
         cursor: pointer;
     }
+
+    @media (min-width: 800px) {
+        width: 250px;
+        height: 250px;
+    }
 `
 
 export const Headline = styled.h2`
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: #98c1d9;
 `

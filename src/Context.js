@@ -4,41 +4,41 @@ import React, {useState, useEffect} from "react"
 const Context = React.createContext()
 
 function ContextProvider({children}) {
-    const [guitarPhotos, setGuitarPhotos] = useState([])
-    const [recordPhotos, setRecordPhotos] = useState([])
-    const [pianoPhotos, setPianoPhotos] = useState([])
+    const [mountainPhotos, setMountainPhotos] = useState([])
+    const [cityPhotos, setCityPhotos] = useState([])
+    const [wildlifePhotos, setWildlifePhotos] = useState([])
     const [category, setCategory] = useState("")
     const [cartItems, setCartItems] = useState([])
     const [overlay, setOverlay] = useState([])
 
-    const guitarUrl = "https://api.unsplash.com/search/photos?per_page=30&query=guitar&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
-    const recordUrl = "https://api.unsplash.com/search/photos?per_page=30&query=vinyl_record&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
-    const pianoUrl = "https://api.unsplash.com/search/photos?per_page=30&query=piano&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
+    const mountainUrl = "https://api.unsplash.com/search/photos?per_page=30&query=mountains&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
+    const cityUrl = "https://api.unsplash.com/search/photos?per_page=30&query=cities&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
+    const wildlifeUrl = "https://api.unsplash.com/search/photos?per_page=30&query=animals&client_id=bHVrFWHKFDWazV4a0kjfyUxs-8lQxb9CHg_JeXczL8g"
 
-    function getGPhotos() {
-        fetch(guitarUrl)
+    function getMPhotos() {
+        fetch(mountainUrl)
             .then(res => res.json())
-            .then(data => setGuitarPhotos(data.results))
+            .then(data => setMountainPhotos(data.results))
     }
 
-    function getRPhotos() {
-        fetch(recordUrl)
+    function getCPhotos() {
+        fetch(cityUrl)
             .then(res => res.json())
-            .then(data => setRecordPhotos(data.results))
+            .then(data => setCityPhotos(data.results))
     }
 
-    function getPPhotos() {
-        fetch(pianoUrl)
+    function getWPhotos() {
+        fetch(wildlifeUrl)
             .then(res => res.json())
-            .then(data => setPianoPhotos(data.results))
+            .then(data => setWildlifePhotos(data.results))
     }
 
     useEffect(() => {
         let mounted = true
         if (mounted) {
-            getGPhotos()
-            getRPhotos()
-            getPPhotos()
+            getMPhotos()
+            getCPhotos()
+            getWPhotos()
         }
         return function cleanup() {
             mounted = false
@@ -51,6 +51,10 @@ function ContextProvider({children}) {
 
     function removeFromCart(id) {
         setCartItems(prevCartItems => prevCartItems.filter(item => item.id !== id)) 
+    }
+
+    function clearCart() {
+        setCartItems([])
     }
 
     //category page: add onClick to each rendered image that displays image overlay component
@@ -67,13 +71,14 @@ function ContextProvider({children}) {
 
     return (
         <Context.Provider value={{
-            guitarPhotos,
-            recordPhotos,
-            pianoPhotos,
+            mountainPhotos,
+            cityPhotos,
+            wildlifePhotos,
             category,
             setCategory,
             cartItems,
             addToCart,
+            clearCart,
             removeFromCart,
             overlay,
             displayOverlay,

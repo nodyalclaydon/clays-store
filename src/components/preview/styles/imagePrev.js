@@ -40,6 +40,9 @@ export const SeeMore = styled.p`
 export const Header = styled.h2`
     font-size: 1.6rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #98c1d9;
 `
 
 export const Link = styled.a`

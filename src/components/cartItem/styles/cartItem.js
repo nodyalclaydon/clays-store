@@ -28,6 +28,20 @@ export const Info = styled.div`
 export const Title = styled.h1`
     text-transform: capitalize;
     margin-top: 0;
+    max-width: 200px;
+    word-wrap: break-word;
+
+    @media (min-width: 800px) {
+        max-width: 400px;
+    }
+
+    @media (min-width: 1000px) {
+        max-width: 700px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 900px;
+    }
 `
 
 export const Credit = styled.h2`
@@ -43,8 +57,28 @@ export const Price = styled.h1`
 `
 
 export const Total = styled.h1`
-    position: absolute;
-    right: 30px;
-    margin-top: 40px;
+    margin: 40px 30px 0 0;
+    text-align: right;
     font-size: 2.4rem;
+`
+
+export const BuyBtn = styled.button`   
+    display: block;    
+    margin: 60px 30px 0 auto;
+    border: none;
+    outline: none;
+    width: 150px;
+    color: white;
+    background-color: #ee6c4d;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 150ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.045)
+    }
 `

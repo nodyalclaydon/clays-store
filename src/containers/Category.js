@@ -4,9 +4,9 @@ import { Image } from "../components"
 import {Context} from "../Context"
 
 export function CategoryContainer({ children, ...restProps }) {
-    const {guitarPhotos, recordPhotos, pianoPhotos, category, displayOverlay} = useContext(Context)
+    const {mountainPhotos, cityPhotos, wildlifePhotos, category, displayOverlay} = useContext(Context)
 
-    const GuitarElements = guitarPhotos.map(img => {
+    const MountainElements = mountainPhotos.map(img => {
         return <Image.Photo 
         key={img.id} 
         src={img.urls.regular} 
@@ -15,7 +15,7 @@ export function CategoryContainer({ children, ...restProps }) {
         />
     })
 
-    const RecordElements = recordPhotos.map(img => {
+    const CityElements = cityPhotos.map(img => {
         return <Image.Photo 
         key={img.id} 
         src={img.urls.regular} 
@@ -24,7 +24,7 @@ export function CategoryContainer({ children, ...restProps }) {
         />
     })
 
-    const PianoElements = pianoPhotos.map(img => {
+    const WildlifeElements = wildlifePhotos.map(img => {
         return <Image.Photo 
             key={img.id} 
             src={img.urls.regular} 
@@ -33,13 +33,13 @@ export function CategoryContainer({ children, ...restProps }) {
             />
     })
 
-    const headlineText = category === "guitar" ? "Guitar" : category === "records" ? "Record" : "Piano"
+    const headlineText = category === "mountains" ? "Mountain" : category === "cities" ? "City" : "Wildlife"
     
     return (
         <>
-        <Image.Headline>{`Displaying All ${headlineText} Images`}</Image.Headline>
+        <Image.Headline>{`${headlineText} Photography`}</Image.Headline>
         <Image>
-            {category === "guitar" ? GuitarElements : category === "records" ? RecordElements : PianoElements}
+            {category === "mountains" ? MountainElements : category === "cities" ? CityElements : WildlifeElements}
         </Image>
         </>
     )

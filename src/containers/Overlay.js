@@ -31,7 +31,7 @@ return overlay.length === 0 ? <div></div> :
                             }
                         }>{btnText}</Overlay.AddToCart>
                     <Overlay.ViewCart to="/cart" onClick={() => hideOverlay()}>view cart</Overlay.ViewCart>
-                    <Overlay.Close onClick={() => {hideOverlay(); changeColor()}} />
+                    <Overlay.Close onClick={() => {changeColor(); hideOverlay()}} />
                 </Overlay.Info>
             </Overlay.Container>
         </Overlay>
