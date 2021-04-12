@@ -3,9 +3,13 @@ import styled from "styled-components"
 export const Container = styled.header`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     background-color: #293241;
+
+    @media (min-width: 600px) {
+        align-items: center;
+    }
 
     @media (min-width: 2000px) {
         justify-content: space-around;
@@ -15,14 +19,41 @@ export const Container = styled.header`
 export const Logo = styled.img`
     width: 50px;
     padding: 20px;
-    margin: 0 40px 0 0;
     filter: brightness(0) invert(1);
+
+    @media (min-width: 600px) {
+        margin: 0 40px 0 0;
+    }
 `
 
 export const Frame = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+
+    &:last-of-type {
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &:first-of-type {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+
+        &:last-of-type {
+            flex-direction: row;
+            position: relative;
+        }
+
+        &:first-of-type {
+            margin: 0;
+        }
+    }
 `
 
 export const Icon = styled.img`  
@@ -38,12 +69,17 @@ export const Icon = styled.img`
 `
 
 export const Link = styled.a`   
+    display: block;    
     color: white;
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-right: 30px;
+    margin: 0 auto 30px;
+
+    @media (min-width: 600px) {
+        margin: 0 30px 0 0;
+    }
 
     &:hover {
         color: #e0fbfc;
@@ -51,6 +87,6 @@ export const Link = styled.a`
 `
 
 export const Counter = styled.p`
-    color: white;
+    color: #e0fbfc;
     font-size: 1.6rem;
 `

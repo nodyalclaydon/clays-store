@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -28,13 +28,19 @@ export const ImagePrev = styled.img`
 
 export const PrevContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 `
 
 export const SeeMore = styled.p`
     font-size: 1.2rem;
     text-transform: uppercase;
-    text-align: right;
+    text-align: center;
+
+    @media (min-width: 600px) {
+        text-align: right;
+    }
 `
 
 export const Header = styled.h2`
@@ -43,6 +49,12 @@ export const Header = styled.h2`
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #98c1d9;
+    text-align: center;
+
+    @media (min-width: 600px) {
+        text-align: left;
+        margin-left: 5px;
+    }
 `
 
 export const Link = styled.a`

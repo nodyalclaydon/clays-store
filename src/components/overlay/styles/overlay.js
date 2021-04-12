@@ -15,54 +15,66 @@ export const Background = styled.div`
         width: inherit;
         height: inherit;
         position: absolute;
-        background: rgba(255, 255, 255, 255);
-        opacity: 0.7;
+        background: rgba(0, 0, 0);
+        opacity: 0.5;
     }
 `
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     border-radius: 10px;
     width: 70%;
     max-width: 800px;
     position: fixed;
     background-color: white;
-    height: 600px;
+    min-height: 600px;
+    height: fit-content;
     box-shadow: 0 10px 6px -6px #777;
     z-index: 1;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+        height: 600px;
+    }
 `
 
 export const Image = styled.img`
-    max-width: 55%;
-    height: 85%;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    margin: auto 0 auto 20px;
+    margin: 30px auto;
+
+    @media (min-width: 600px) {
+        width: 55%;
+        height: 85%;
+        margin: auto 15px;
+    }
 `
 
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 0 20px;
-    justify-content: flex-end;
+    margin: 0 15px 15px;
+
+    @media (min-width: 600px) {
+        margin: auto 15px auto 0;
+    }
 `
 
 export const Header = styled.h1`
     font-size: 2.5rem;
-    margin-top: 20px;
     text-transform: capitalize;
 `
 
 export const Credits = styled.h2`
     font-size: 1.2rem;
     font-weight: 400;
-    margin-top: 30px;
 `
 
 export const Price = styled.p`
     font-size: 2.5rem;
-    margin-top: 220px;
+    margin-top: 50px
 `
 
 export const AddToCart = styled.button`
@@ -74,6 +86,7 @@ export const AddToCart = styled.button`
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 10px 10px;
+    margin-top: 50px;
     border-radius: 3px;
     cursor: pointer;
     transition: transform 150ms ease-in-out;
@@ -93,8 +106,8 @@ export const ViewCart = styled.button`
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 10px 10px;
+    margin-top: 15px;
     border-radius: 3px;
-    margin: 15px 0 50px;
     cursor: pointer;
     transition: transform 150ms ease-in-out;
 

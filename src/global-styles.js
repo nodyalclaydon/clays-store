@@ -9,6 +9,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .site-content {
-        min-height: 92vh;
+        min-height: 89vh;
     }
 `

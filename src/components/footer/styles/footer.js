@@ -11,12 +11,12 @@ export const Container = styled.footer`
 
 export const Icon = styled.img`
     filter: brightness(0) invert(1);
-    height: 100%;
+    height: 50px;
+    width: 50px;
     cursor: pointer;
 `
 
 export const Link = styled.a`
-    height: 75%;
     margin: 0 auto;
 `
 

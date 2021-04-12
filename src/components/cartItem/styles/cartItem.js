@@ -14,10 +14,15 @@ export const Trash = styled.img`
 `
 
 export const Thumbnail = styled.img`
-    width: 200px;
-    height: 133px;
+    width: 120px;
+    height: 80px;
     object-fit: cover;
     margin: 0 15px 0;
+
+    @media (min-width: 600px) {
+        width: 200px;
+        height: 133px;
+    }
 `
 
 export const Info = styled.div`
