@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/clays-store/static/js/main.e175b65e.chunk.js",
-    "main.js.map": "/clays-store/static/js/main.e175b65e.chunk.js.map",
+    "main.js": "/clays-store/static/js/main.d5fd6947.chunk.js",
+    "main.js.map": "/clays-store/static/js/main.d5fd6947.chunk.js.map",
     "runtime-main.js": "/clays-store/static/js/runtime-main.b65cc25b.js",
     "runtime-main.js.map": "/clays-store/static/js/runtime-main.b65cc25b.js.map",
     "static/js/2.7f558e1f.chunk.js": "/clays-store/static/js/2.7f558e1f.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.b65cc25b.js",
     "static/js/2.7f558e1f.chunk.js",
-    "static/js/main.e175b65e.chunk.js"
+    "static/js/main.d5fd6947.chunk.js"
   ]
 }
