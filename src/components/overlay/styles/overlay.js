@@ -28,7 +28,7 @@ export const Container = styled.div`
     max-width: 800px;
     position: fixed;
     background-color: white;
-    min-height: 600px;
+    min-height: 500px;
     height: fit-content;
     box-shadow: 0 10px 6px -6px #777;
     z-index: 1;
@@ -43,7 +43,7 @@ export const Image = styled.img`
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin: 30px auto;
+    margin: 30px auto 0;
 
     @media (min-width: 600px) {
         width: 55%;
@@ -74,7 +74,7 @@ export const Credits = styled.h2`
 
 export const Price = styled.p`
     font-size: 2.5rem;
-    margin-top: 50px
+    margin-top: 30px
 `
 
 export const AddToCart = styled.button`
@@ -86,7 +86,7 @@ export const AddToCart = styled.button`
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 10px 10px;
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 3px;
     cursor: pointer;
     transition: transform 150ms ease-in-out;

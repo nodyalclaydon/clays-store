@@ -10,8 +10,8 @@ export const Container = styled.div`
 `
 
 export const Photo = styled.img`
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     margin: 5px;
     transition: transform 100ms ease-in-out;
@@ -21,7 +21,7 @@ export const Photo = styled.img`
         cursor: pointer;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 600px) {
         width: 250px;
         height: 250px;
     }

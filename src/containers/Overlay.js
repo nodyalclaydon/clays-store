@@ -7,8 +7,12 @@ export function OverlayContainer({ children, ...restProps }) {
     const {overlay, hideOverlay, addToCart} = useContext(Context)
     const [clicked, setClicked] = useState(false)
 
-    function changeColor() {
-        setClicked(!clicked)
+    function changeBtn() {
+        if (clicked === false) { setClicked(true) }
+    }
+
+    function resetBtn() {
+        setClicked(false)
     }
 
     let btnColor = clicked ? "#98c1d9" : "#3d5a80"
@@ -27,11 +31,11 @@ return overlay.length === 0 ? <div></div> :
                         style={{backgroundColor: btnColor}}
                         onClick={() => {
                             addToCart(overlay) 
-                            changeColor()
+                            changeBtn()
                             }
                         }>{btnText}</Overlay.AddToCart>
                     <Overlay.ViewCart to="/cart" onClick={() => hideOverlay()}>view cart</Overlay.ViewCart>
-                    <Overlay.Close onClick={() => {changeColor(); hideOverlay()}} />
+                    <Overlay.Close onClick={() => {resetBtn(); hideOverlay()}} />
                 </Overlay.Info>
             </Overlay.Container>
         </Overlay>

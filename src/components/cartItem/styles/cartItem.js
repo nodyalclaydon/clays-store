@@ -2,39 +2,64 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 15px auto;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+    }
 `
 
 export const Trash = styled.img`
     width: 15px;
     height: 22px;
-    margin: auto 0 auto 15px;
     cursor: pointer;
+    position: relative;
+    top: 50px;
+    left: 15px;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    @media (min-width: 600px) {
+        margin: auto 0 auto 15px;
+        top: 0;
+        left: 0;
+    }
 `
 
 export const Thumbnail = styled.img`
     width: 120px;
     height: 80px;
     object-fit: cover;
-    margin: 0 15px 0;
+    margin: 0 15px 5px 45px;
 
     @media (min-width: 600px) {
         width: 200px;
         height: 133px;
+        margin: 0 15px 0;
     }
 `
 
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: 45px;
+
+    @media (min-width: 600px) {
+        margin-left: 0;
+    }
 `
 
 export const Title = styled.h1`
     text-transform: capitalize;
     margin-top: 0;
-    max-width: 200px;
     word-wrap: break-word;
+
+    @media (min-width: 600px) {
+        max-width: 200px;
+    }
 
     @media (min-width: 800px) {
         max-width: 400px;
@@ -58,7 +83,12 @@ export const Price = styled.h1`
     align-self: center;
     position: absolute;
     right: 30px;
+    margin-top: 40px;
     font-weight: 400;
+
+    @media (min-width: 600px) {
+        margin-top: 0;
+    }
 `
 
 export const Total = styled.h1`
